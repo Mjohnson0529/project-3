@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Obesity Dataset</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+  <!-- Link to the Chart.js library from CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- Include PapaParse library for parsing CSV files -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/PapaParse/5.3.0/papaparse.min.js"></script>
+
+</head>
+
+<body>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12 p-5 text-center bg-light">
+        <h1>Subject Comparison Tool</h1>
+        <p>Select two subjects to compare, or just view one by itself.</p>
+      </div>
+    </div>
+    <br>
+
+    <div class="row">
+      <div class="col-md-3">
+        <div class="card card-body bg-light">
+          <h6>Subject One:</h6>
+          <select id="subOneSel" class="subjectSelect" onchange="optionChangedNew(this.id, this.value)">
+            <option value="" disabled selected>Select subject 1</option>
+          </select>
+          <h6>Subject Two:</h6>
+          <select id="subTwoSel" class="subjectSelect" onchange="optionChangedNew(this.id, this.value)">
+            <option value="" disabled selected>Select subject 2 (optional)</option>
+          </select>
+        </div>
+        <br>
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4 class="card-title">Subject One</h4>
+          </div>
+          <div id="sample-metadata" class="card-body"></div>
+        </div>
+        <div class="card card-primary">
+          <div class="card-header">
+            <h4 class="card-title">Subject Two</h4>
+          </div>
+          <div id="sample-metadata-two" class="card-body"></div>
+        </div>
+      </div>
+      
+      <div class="col-md-9">
+        <canvas id="radar"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+  <script src="./static/js/app.js"></script>
+
+</body>
+
+</html>
