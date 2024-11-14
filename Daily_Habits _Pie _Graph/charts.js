@@ -11,19 +11,19 @@ async function createCharts() {
         data: {
             labels: Object.keys(vegData),
             datasets: [{
-                label: 'Frequency of Vegetable Consumption',
+                label: 'Frequency of vegtable Consumption',
                 data: Object.values(vegData),
                 hoverOffset: 4
             }]
         },
         options: {
-            responsive: true,
             plugins: {
                 legend: { position: 'bottom' },
-                title: { display: true, text: 'Frequency of Vegetable Consumption' }
+                title: { display: true, text: 'Frequency of vegtable Consumption' }
             }
         }
     });
+       
 
     // Number of Main Meals Chart
     const mealsData = await loadData('meal_count.json');
@@ -38,7 +38,6 @@ async function createCharts() {
             }]
         },
         options: {
-            responsive: true,
             plugins: {
                 legend: { position: 'bottom' },
                 title: { display: true, text: 'Number of Main Meals' }
@@ -59,7 +58,6 @@ async function createCharts() {
             }]
         },
         options: {
-            responsive: true,
             plugins: {
                 legend: { position: 'bottom' },
                 title: { display: true, text: 'Physical Activity Frequency' }
@@ -80,7 +78,6 @@ async function createCharts() {
             }]
         },
         options: {
-            responsive: true,
             plugins: {
                 legend: { position: 'bottom' },
                 title: { display: true, text: 'Consumption of Food Between Meals' }
